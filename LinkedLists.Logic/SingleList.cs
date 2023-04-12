@@ -19,7 +19,7 @@ namespace LinkedLists.Logic
             var pointer =_first;
             while (pointer != null) 
             {
-                output += $"{ pointer.Data}\n";
+                output += $"  { pointer.Data} \n";
                 pointer = pointer.Next;
             }
             return output;
