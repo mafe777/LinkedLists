@@ -44,6 +44,31 @@ namespace LinkedLists.Logic
             
             
         }
+        public bool Remove (T item) 
+        {
+            var pointer = _first;
+            var previous = pointer;
+            while (pointer != null) 
+            {
+                if (pointer.Data!.Equals(item)) 
+                {
+                    if (pointer == _first) 
+                    {
+                       _first = pointer.Next;
+                    }
+                    else 
+                    {
+                        previous!.Next = pointer.Next;
+                    }
+                    
+                    return true;
+                }
+                previous = pointer;
+                pointer = pointer.Next;  
+            }
+            return false;
+
+        }
 
     }
 }
