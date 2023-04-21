@@ -2,7 +2,7 @@
 
 namespace LinkedLists.Logic
 {
-    public class SingleList <T>
+    public class SingleList  <T>
     {
         private SingleNode <T>? _first;
 

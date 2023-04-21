@@ -2,7 +2,27 @@
 using LinkedLists.Logic;
 using System.ComponentModel.Design;
 
-Console.WriteLine("*----- Linked Lists -----*");
+Console.WriteLine("*----- Double Lists -----*");
+var fruits = new DoubleList <Fruit>();
+fruits.Add(new Fruit { Name = "MANGO", Price = 4500 });
+fruits.Add(new Fruit { Name = "KIWI", Price = 6000 });
+fruits.Add(new Fruit { Name = "AGUACATE", Price = 5000 });
+fruits.Add(new Fruit { Name = "FRESA", Price = 3800 });
+
+Console.WriteLine("*----- List In Order -----*");
+Console.WriteLine(fruits);
+Console.WriteLine("*----- List In Inverted Order -----*");
+Console.WriteLine(fruits.ToInvertedList());
+
+Console.WriteLine("*----- List Converted To Array -----*");
+
+var fruitsArray = fruits.ToArray();
+foreach (var fruit in fruitsArray.OrderBy(fruit => fruit.Price))
+{
+    Console.WriteLine(fruit);
+}
+
+/*
 Console.WriteLine(" ");
 var singlelist = new SingleList<string>();
 FillList();
@@ -106,7 +126,6 @@ void AddItem()
     singlelist.Add(item!);
 }
 
-
 int Menu()
 {
     Console.WriteLine("    *-- MENU--*   ");
@@ -119,3 +138,4 @@ int Menu()
     var option = Console.ReadLine();
     return Convert.ToInt32(option);
 }
+*/
