@@ -34,22 +34,25 @@ do
 
 void InserItem()
 {
-    Console.WriteLine("Enter The Current Item");
+    Console.WriteLine(" ");
+    Console.WriteLine("*Enter The Current Item");
     var current = Console.ReadLine();
-    Console.WriteLine("Enter The New Item");
+    Console.WriteLine("*Enter The New Item");
     var item = Console.ReadLine();
     var result = singlelist.Insert(current!,item!);
     if (result)
     {
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Item Inserted Succesfully");
+        Console.WriteLine(" ");
+        Console.WriteLine("*Item Inserted Succesfully");
         Console.ForegroundColor = ConsoleColor.White;
 
     }
     else
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Item Not Founded In The List");
+        Console.WriteLine(" ");
+        Console.WriteLine("*Item Not Founded In The List");
         Console.ForegroundColor = ConsoleColor.White;
     }
 
@@ -57,20 +60,23 @@ void InserItem()
 
 void RemoveItem()
 {
-    Console.WriteLine("Enter The Item You Want To Remove");
+    Console.WriteLine(" ");
+    Console.WriteLine("*Enter The Item You Want To Remove");
     var item = Console.ReadLine();
     var result = singlelist.Remove(item!);
     if (result)
     {
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Item Removed Succesfully");
+        Console.WriteLine(" ");
+        Console.WriteLine("*Item Removed Succesfully");
         Console.ForegroundColor = ConsoleColor.White;
 
     }
     else
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Item Not Founded In The List");
+        Console.WriteLine(" ");
+        Console.WriteLine("*Item Not Founded In The List");
         Console.ForegroundColor = ConsoleColor.White;
     }
     
@@ -80,17 +86,22 @@ void ShowList()
 {
     if (singlelist.IsEmpty) 
     {
-        Console.WriteLine("The List Is Empty");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(" ");
+        Console.WriteLine("*The List Is Empty, Please Fill It");
+        Console.ForegroundColor = ConsoleColor.White;
         return;
     }
-    Console.WriteLine("The List Elements Are: ");
+    Console.WriteLine(" ");
+    Console.WriteLine("*The List Elements Are: ");
     Console.WriteLine(singlelist);
 
 }
 
 void AddItem()
 {
-    Console.WriteLine("Enter The Item");
+    Console.WriteLine(" ");
+    Console.WriteLine("*Enter The Item");
     var item = Console.ReadLine();
     singlelist.Add(item!);
 }
@@ -98,12 +109,13 @@ void AddItem()
 
 int Menu()
 {
-    Console.WriteLine("1. Add Item");
-    Console.WriteLine("2. Show List");
-    Console.WriteLine("3. Remove Item");
-    Console.WriteLine("4. Insert Item");
-    Console.WriteLine("0. Exit");
-    Console.Write("choose the option:  ");
+    Console.WriteLine("    *-- MENU--*   ");
+    Console.WriteLine("   1. Add Item");
+    Console.WriteLine("   2. Show List");
+    Console.WriteLine("   3. Remove Item");
+    Console.WriteLine("   4. Insert Item");
+    Console.WriteLine("   0. Exit");
+    Console.Write(" *choose the option:  ");
     var option = Console.ReadLine();
     return Convert.ToInt32(option);
 }
