@@ -69,6 +69,35 @@ namespace LinkedLists.Logic
             return false;
 
         }
+        public bool Insert(T current, T item)
+        {
+            var pointer = _first;
+            var previous = pointer;
+            while (pointer != null)
+            {
+                if (pointer.Data!.Equals(current))
+                {
+                    var node = new SingleNode<T>(item);
 
+                    if (pointer == _first)
+                    {
+                        _first = node;
+                        node.Next = pointer;
+                        
+                    }
+                    else
+                    {
+                        previous!.Next = node;
+                        node.Next = pointer;
+                    }
+
+                    return true;
+                }
+                previous = pointer;
+                pointer = pointer.Next;
+            }
+            return false;
+
+        }
     }
 }

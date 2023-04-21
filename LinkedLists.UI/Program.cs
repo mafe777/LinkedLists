@@ -26,11 +26,34 @@ do
         case 1: AddItem(); break;
         case 2: ShowList(); break;
         case 3: RemoveItem(); break;
-       // case 4: 
+        case 4: InserItem(); break;
     
         default:break;
     }
 } while (option !=0);
+
+void InserItem()
+{
+    Console.WriteLine("Enter The Current Item");
+    var current = Console.ReadLine();
+    Console.WriteLine("Enter The New Item");
+    var item = Console.ReadLine();
+    var result = singlelist.Insert(current!,item!);
+    if (result)
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Item Inserted Succesfully");
+        Console.ForegroundColor = ConsoleColor.White;
+
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Item Not Founded In The List");
+        Console.ForegroundColor = ConsoleColor.White;
+    }
+
+}
 
 void RemoveItem()
 {
@@ -78,6 +101,7 @@ int Menu()
     Console.WriteLine("1. Add Item");
     Console.WriteLine("2. Show List");
     Console.WriteLine("3. Remove Item");
+    Console.WriteLine("4. Insert Item");
     Console.WriteLine("0. Exit");
     Console.Write("choose the option:  ");
     var option = Console.ReadLine();
